@@ -1,0 +1,32 @@
+{
+  "name": "backend-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node --inspect ./build/src/index.js",
+    "dev": "ts-node-dev ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luana-fs/backend-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luana-fs/backend-project/issues"
+  },
+  "homepage": "https://github.com/luana-fs/backend-project#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "knex": "^0.95.6"
+
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.5",
+    "ts-node-dev": "^1.1.7",
+    "typescript": "^4.3.4",
+    "@types/knex": "^0.16.1"
+  }
+}
