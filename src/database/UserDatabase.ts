@@ -4,7 +4,7 @@ import BaseDatabase from "./BaseDatabase";
 
 
 export class UserDatabase extends BaseDatabase {
-    protected tableName: string = "user" 
+    protected tableName: string = "users" 
 
     public async createUser(user: User): Promise<void> {
         try {
