@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
-const baseDataBase = {
+const config = {
 
   development: {
     client: "mysql",
@@ -27,4 +27,4 @@ const baseDataBase = {
     }
   };
 
-  export default baseDataBase
+  export default config

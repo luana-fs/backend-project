@@ -1,3 +1,4 @@
+import { CustomError } from "../errors/CustomError";
 import { User } from "../model/User";
 import BaseDatabase from "./BaseDatabase";
 
@@ -10,7 +11,20 @@ export class UserDatabase extends BaseDatabase {
         try {
             await BaseDatabase.connection(this.tableName).insert(user)
         } catch (err) {
-            throw new Error(err.message || err.sqlMessage)
+            throw new CustomError(400, err.message || err.sqlMessage)
+        }
+    }
+
+    public async getUserByEmail(email: string): Promise<User | undefined> {
+        try {
+            const result = await BaseDatabase.connection()
+            .select("*")
+            .from(this.tableName)
+            .where({ email });
+            console.log(result[0])
+            return User.toUserModel(result[0])
+        } catch (err) {
+            throw new CustomError(400, err.message || err.sqlMessage)
         }
     }
 }

@@ -1,13 +1,13 @@
 import dotenv from 'dotenv'
 import {Knex, knex} from 'knex'
-import dataDataBase from '../../knexfile'
+import config from '../../knexfile'
 
 
 dotenv.config()
 
 export default class BaseDatabase {
 
-    protected static connection: Knex = knex(dataDataBase.development)
+    protected static connection: Knex = knex(config.development)
 
     public static async destroyConnection(): Promise<void> {
         await BaseDatabase.connection.destroy();
